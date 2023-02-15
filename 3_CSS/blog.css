@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: lightgray;
+}
+/* use this if dont wanna inherit the background color from *{} */
+/* body{
+    background-color: lightgray;
+} */
+header{
+    background-color: yellow;
+    padding: 20px 10px;
+    text-align: center;
+    display: flex;
+}
+header h3{
+    padding: 0 20px;
+    /* inheriting background color from the header parent as it is above h3 like a h3 paper above header paper */
+    background-color: inherit; 
+}
+header nav{
+    display: flex;
+    background-color: inherit;
+}
+header nav div{
+    background-color: inherit;
+    padding: 0 10px;
+    font-size: small;
+    display: flex;
+    align-items: center;
+}
+nav div a:hover{
+    color: gray;
+}
+header nav div a{
+    background-color: inherit;
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1px;
+}
+main, footer{
+    margin: 10px 0;
+}
