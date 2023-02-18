@@ -8,3 +8,4 @@
 3. Grid gaps/gutter
 4. Inline CSS > ID Based CSS > Classes based CSS > internal/external CSS
 5. Float can overlap
+6. `float` and `clear` are imp to understand in CSS
