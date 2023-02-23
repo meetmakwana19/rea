@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: aqua;
+        }
+        @media screen and (max-width: 600px) {
+            body{
+                background-color: orange;
+            }
+        }
+        @media screen and (min-width: 800px) {
+            body{
+                background-color: purple;
+            }
+        }
+        header{
+            padding: 1rem;
+        }
+        nav{
+            display: flex;
+            /* gap b/w child divs */
+            gap: 1rem
+        }
+        .nav-item{
+            /* to spread acroos screen */
+            width: 100%; 
+        }
+        @media screen and (max-width: 600px) {
+            nav{
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            Media Queries
+        </h1>
+        <nav>
+            <div class="nav-item">Link</div>
+            <div class="nav-item">Link</div>
+            <div class="nav-item">Link</div>
+            <div class="nav-item">Link</div>
+            <div class="nav-item">Link</div>
+            <div class="nav-item">Link</div>
+        </nav>
+    </header>
+</body>
+</html>

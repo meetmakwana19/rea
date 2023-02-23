@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallary</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            text-align: center;
+            /* padding: 1rem auto; */
+        }
+        .row{
+            display: flex;
+            /* wrap is necessary for col adjustment media queries */
+            flex-wrap: wrap;
+            /* gap can use space from the next col if needed and push the next row element in the next row at bottom so be carefull while giving gaps too */
+            /* gap: 1rem; */
+        }
+        .col{
+            /* for 4 cols = 25% */
+            /* for 5 cols = 20% */
+            flex: 20%;
+        }
+        img{
+            width: 100%;
+            /* height: 100px; */
+        }
+        @media screen and (max-width: 800px) {
+            .col{
+                flex: 50%;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .col{
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>A Responsive Image Gallary</h1>
+    </header>
+    <div class="row">
+        <div class="col">
+            <img src="https://cdn.pixabay.com/photo/2020/11/28/03/19/iron-man-5783522_960_720.png" alt="">
+            <img src="https://cdn.pixabay.com/photo/2017/07/19/17/26/gabriel-2519793__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2022/06/20/11/34/spiderman-7273540__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2023/02/08/02/50/thanos-7775611__340.jpg" alt="">
+        </div>
+        <div class="col">
+            <img src="https://cdn.pixabay.com/photo/2017/07/19/17/26/gabriel-2519793__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2022/06/20/11/34/spiderman-7273540__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2023/02/08/02/50/thanos-7775611__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2020/11/28/03/19/iron-man-5783522_960_720.png" alt="">
+        </div>
+        <div class="col">
+            <img src="https://cdn.pixabay.com/photo/2022/06/20/11/34/spiderman-7273540__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2023/02/08/02/50/thanos-7775611__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2020/11/28/03/19/iron-man-5783522_960_720.png" alt="">
+            <img src="https://cdn.pixabay.com/photo/2017/07/19/17/26/gabriel-2519793__340.jpg" alt="">
+        </div>
+        <div class="col">
+            <img src="https://cdn.pixabay.com/photo/2023/02/08/02/50/thanos-7775611__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2022/06/20/11/34/spiderman-7273540__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2017/07/19/17/26/gabriel-2519793__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2020/11/28/03/19/iron-man-5783522_960_720.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
