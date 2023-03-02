@@ -12,44 +12,76 @@
 </head>
 
 <body>
-  <div class="hero">
-    <nav class="navbar navbar-dark bg-transparent navbar-expand-lg fs-4 py-3">
-      <div class="container-fluid">
-        <a class="navbar-brand ms-5" href="#">Meet Me</a>
+  <!-- picture banner start -->
+  <section class="hero">
+    <nav class="navbar navbar-dark bg-transparent navbar-expand-lg fs-4 py-3 fixed-top">
+      <!-- <div class="container-fluid"> -->
+      <div class="container">
+        <!-- <a class="navbar-brand ms-5" href="#">Meet Me</a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- for nav-items to be in center, giving class ms-auto below here -->
           <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
             <li class="nav-item mx-5">
               <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item mx-5">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item mx-5">
+              <a class="nav-link" href="#">My Works</a>
             </li>
             <li class="nav-item mx-5">
               <a class="nav-link" href="#">Resume</a>
             </li>
             <li class="nav-item mx-5">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link btn btn-light text-dark btn-contact" href="#">Contact</a>
             </li>
         </div>
       </div>
     </nav>
-  </div>
-  <div class="container text-center">
+    <div class="container text-light">
+      <div class="hero-title position-absolute top-50 start-20 translate-middle-y">
+        <h1>I am Meet Makwana</h1>
+      </div>
+      <div class="hero-subtitle position-absolute top-50 translate-middle-y">
+        <h1>A Full Stack </h1>
+        <h1>Web Development</h1>
+        <h1>Engineer</h1>
+      </div>
+    </div>
+  </section>
+  <!-- picture banner end -->
+
+  <!--  -->
+  <section id="about"
+    class="text-center container border border-light-subtle bg-white p-5 text-md section-container my-4">
     <h1>About Me</h1>
+    <p>I am a final year student of computer engineering, hailing from Mumbai. With an avid interest in computer
+      programming, I love exploring new technologies and applying them to practical projects. I am highly motivated and
+      enthusiastic about making a positive impact in the field of computer engineering. My ultimate goal is to leverage
+      my skills and knowledge to contribute towards developing innovative solutions to real-world problems.</p>
+    <p>As a final year computer engineering student from Mumbai, I bring a unique blend of technical expertise, creativity, and a passion for innovation to the table. With a strong foundation in programming languages and
+      software development tools, I have worked on a range of challenging projects that have helped me hone my skills
+      and build my portfolio. I aim to leverage my knowledge and expertise to make a positive impact in the world by
+      developing innovative solutions that drive growth and success for businesses and individuals alike. Let's work
+      together to bring your ideas to life!</p>
+  </section>
+  <div class="container section-container my-4 text-center border border-light-subtle bg-white p-5 text-md">
+    <h1>My Works</h1>
   </div>
-  <div class="container text-center">
+  <div class="container section-container my-4 text-center border border-light-subtle bg-white p-5 text-md">
     <h1>Resume</h1>
   </div>
-  <div class="container text-center">
+  <div class="container section-container my-4 text-center border border-light-subtle bg-white p-5 text-md">
     <h1>Contact</h1>
   </div>
 
-  <footer>
-    <div class="container text-center">
+  <footer class="bg-white h-25 p-5">
+    <div class="container text-center d-flex justify-content-center align-self-center">
       <h4>Footer</h4>
     </div>
   </footer>

@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: rgb(224, 222, 222);
 }
 .hero{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("meet.jpg");
@@ -14,4 +15,67 @@ html, body {
 }
 .navbar-brand, .navbar-nav {
     letter-spacing: 0.2rem;
+}
+
+.hero-title{
+}
+.hero-title h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+.hero-subtitle{
+    right: 15%;
+    text-align: right;
+}
+.hero-subtitle h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white; /* The typwriter cursor */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing2 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+    /* animation-delay: 5s; */
+    animation-fill-mode: forwards;
+
+}
+/* The typing effect */
+@keyframes typing2 {
+    from { width: 0% }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
+.btn-contact{
+    padding: 5px 20px !important;
+    border-radius: 25px !important;
+}
+
+/* ********************************* */
+/* about section */
+.section-container{
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
 }
