@@ -15,11 +15,11 @@ html, body {
     background-size: cover;
     position: relative;
 }
+.navbar{
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
 .navbar-brand, .navbar-nav {
     letter-spacing: 0.2rem;
-}
-
-.hero-title{
 }
 .hero-title h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
