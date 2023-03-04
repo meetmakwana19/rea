@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
 html, body {
     /* this is essential for the hero image to be stretched on the whole HTML Page based on the image size irrespective of the absence/presence of the HTML content */
     height: 100%;
@@ -92,3 +94,20 @@ html, body {
 
 /* ********************************* */
 /* resume section */
+
+/* ********************************* */
+/* footer */
+footer{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("/assets/x.jpeg");
+  /* height: 100%; */
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.footer-end{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.bootstrap-text{
+  color: #9c6aff;;
+}
