@@ -81,6 +81,10 @@ html, body {
 }
 
 /* ********************************* */
+/* project works section */
+.card-img-top{
+  height: 19rem;
+}
 .btn-github{
   background-color: #712cf9;;
   color: white;
