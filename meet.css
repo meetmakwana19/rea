@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 html, body {
-    /* this is essential for the hero image to be stretched on the whole HTML Page based on the image size irrespective of the absence/presence of the HTML content */
+    /* this is essential for the hero image to be stretched on the whole HTML Page based on the image size irrespective of the absence/presence of the   HTML content */
     height: 100%;
     margin: 0;
     padding: 0;
@@ -11,8 +11,8 @@ html, body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("/assets/meet.jpg");
     height: 100%;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
 }
 .navbar{
