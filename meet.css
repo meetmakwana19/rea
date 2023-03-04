@@ -84,6 +84,15 @@ html, body {
 
 /* ********************************* */
 /* project works section */
+.card{
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.717);
+  /* overflow: hidden; */
+  /* transition-property, transition-duration, transition-timing-function, transition-delay */
+  transition: all 0.4s ease-in 0s;
+}
+.card:hover{
+  transform: scale(1.05);
+}
 .card-img-top{
   height: 19rem;
 }
