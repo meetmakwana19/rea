@@ -8,7 +8,7 @@ html, body {
     background-color: rgb(224, 222, 222);
 }
 .hero{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("/assets/meet.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("./assets/meet.jpg");
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -109,7 +109,7 @@ html, body {
 /* ********************************* */
 /* footer */
 footer{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("/assets/x.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("./assets/x.jpeg");
   /* height: 100%; */
   background-position: top center;
   background-repeat: no-repeat;
