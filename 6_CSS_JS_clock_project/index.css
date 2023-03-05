@@ -1,0 +1,75 @@
+body{
+    background-image: url("https://images.unsplash.com/photo-1610534440162-e0e68fbdeca3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80");
+    background-size: contain;
+}
+.container{
+    height: 45rem;
+    width: 45rem;
+    align-items: center;
+    justify-content: center;
+}
+.circle{
+    /* background-color: white; */
+    background-image: url("https://seeklogo.com/images/D/dr-strange-logo-8AE12158D3-seeklogo.com.png");
+    background-size: cover;
+    height: 35rem;
+    width: 35rem;
+    border: 2.3rem solid black;
+    border-radius: 50%;
+    /* padding: 2rem; */
+    box-shadow: 14px -5px 146px -35px rgba(255,255,255,1);
+    -webkit-box-shadow: 14px -5px 146px -35px rgba(255,255,255,1);
+    -moz-box-shadow: 14px -5px 146px -35px rgba(255,255,255,1);
+}
+.clock-face{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1.3rem solid black;
+    border-radius: 50%;
+}
+.hand{
+    width: 50%;
+    height: 1rem;
+    background-color: gray;
+    border: 2px solid rgba(255, 255, 255, 0.815);
+    position: absolute;
+    top: 50%;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    /* transition: all 0.3s; */
+}
+#min-hand{
+    height: 0.5rem;
+}
+#sec-hand{
+    height: 0.3rem;
+}
+
+.numbers{
+    position: relative;
+}
+.number{
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+}
+twelve {
+    top: 0.25em; right: 47%;
+    bottom: 95%; left: 47%;
+  }
+  
+  .three {
+    top: 48%; right: 0%;
+    bottom: 48%; left: 94%;
+  }
+  
+  .six {
+    top: 95%; right: 47%;
+    bottom: 1em; left: 48%;
+  }
+  
+  .nine {
+    top: 48%; right: 0%;
+    bottom: 48%; left: 0%;
+  }

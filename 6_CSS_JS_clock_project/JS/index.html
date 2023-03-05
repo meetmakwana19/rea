@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        .container{
+            width: 25vw;
+            height: 25vh;
+            margin: 1rem auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation using JS</h1>
+    <div class="container">
+        <h1>Hello world</h1>
+    </div>
+    <script>
+        // The getElementsByClassName() method returns a collection of all elements in the document with the specified class name, as a NodeList object. The nodes can be accessed by index numbers.
+        // const container = document.getElementsByClassName("container")[0]
+        const container = document.querySelectorAll(".container")[0]
+        container.style.background = "gray"
+
+        // using reduce function to play with array of objs to return a smaller single value instead of complex arr
+        const arrObj = [
+            {
+                name: "Bruce",
+                age:40
+            },
+            {
+                name: "Tony",
+                age: 45
+            },
+            {
+                name: "Steve",
+                age: 110
+            },
+        ]
+        console.log("array of objs : ", arrObj)
+
+        const sumAge = arrObj.reduce(function(accumulator, current){
+            return{
+                age: accumulator.age + current.age
+            }
+        }, {age: 0})
+        console.log("sumAge is : ", sumAge)
+
+        const filteredArr = arrObj.filter(function(curr){
+            return curr.age > 100
+        })
+        console.log("age greater than 100 is", filteredArr)
+        
+        const index = arrObj.findIndex(function(curr){
+            return curr.age === 110
+
+            // this wont work due to === objetc type comparison
+            // return curr.age === "110"
+        })
+        console.log("index of 110 is", index)
+        
+        const find_value = arrObj.find(function(element){
+            return element.age === 45
+        })
+        console.log("45 is", find_value)
+
+        console.log("popping like stack: ", arrObj.pop())
+        console.log("pushing like stack: ", arrObj.push(20))
+
+        const abc = [1,2,3,4,5]
+
+        const xyz = abc
+
+        console.log("abc is :", abc)
+        console.log("xyz is :", xyz)
+        
+        xyz.pop();
+        console.log("after xyz.pop() :", xyz)
+        console.log("so abc after pop is :", abc)
+        
+        // to make a copy of array 
+        const newArr = Array.from(abc);
+        abc.pop();
+        console.log("newArr is :", newArr)
+        console.log("abc is :", abc)
+        
+        const arr1 = ['a', 'b', 'c', 'd', 'e']
+        console.log("arr1 is :", arr1)
+        
+        // from index 2, slice till 4-1 position
+        // slice returns selected elements and doesnt mutates og array
+        const sliceArr = arr1.slice(2,4);
+        console.log("sliceArr is :", sliceArr)
+        console.log("same arr1 is :", arr1)
+        
+        const arr2 = ['a', 'b', 'c', 'd', 'e']
+        console.log("arr2 is :", arr2)
+        // 1 is index to start and 2 is no. of elements to delete
+        // splice returns deleted elements and mutates og array
+        const spliceArr = arr2.splice(1,2);
+        console.log("spliceArr is :", spliceArr)
+
+        const arrObj1 = [
+            {
+                name: "Bruce",
+                age:40
+            },
+            {
+                name: "Tony",
+                age: 45
+            },
+            {
+                name: "Steve",
+                age: 110
+            },
+        ]
+
+        const sortedArr = arrObj1.sort(function(a, b){
+            if(a.age > b.age){
+                return 1
+            }
+            if(a.age < b.age){
+                return -1
+            }
+            return 0
+        })
+        console.log(sortedArr)
+
+    </script>
+</body>
+</html>
