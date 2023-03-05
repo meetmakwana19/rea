@@ -122,3 +122,35 @@ footer{
 .bootstrap-text{
   color: #9c6aff;;
 }
+
+@media (max-width: 360px) {
+  footer > div > section > .row  > .col {
+    /* background-color: red; */
+    max-width: 33%;
+  }
+}
+
+/* for samsung galaxy fold */
+@media (max-width: 280px) {
+  footer > div > section > .row  > .col {
+    max-width: 33%;
+    display: flex;
+    /* border: 1px solid white;
+    border-radius: 50% !important;
+    padding: 1rem !important; */
+  }
+  footer > div > section > .row{
+    row-gap: 0 !important;
+    margin-bottom: 10rem;
+  }
+  footer .btn-lg{
+    /* background-color: red; */
+    max-width: 70%;
+    max-height: 70%;
+    border: 0;
+    padding: 0 !important;
+    /* margin: 0 !important; */
+    /* margin-top: auto; */
+    /* margin-bottom: auto; */
+  }
+}
