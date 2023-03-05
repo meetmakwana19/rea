@@ -84,7 +84,7 @@ html, body {
 
 /* ********************************* */
 /* project works section */
-.card, .ratio, form{
+.card, .resume-frame, form{
   box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.717);
 }
 .moving-card{
