@@ -99,8 +99,8 @@ html, body {
   height: 19rem;
 }
 .btn-github{
-  background-color: #712cf9;;
-  color: white;
+  background-color: #712cf9 !important;
+  color: white !important;
 }
 
 /* ********************************* */
