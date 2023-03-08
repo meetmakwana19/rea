@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>JS Strings </h1>
+
+    <script>
+        // defining string 
+        let s1 = "meet"
+        // string concatenation
+        s1 += "makwana"
+
+        // using template literate
+        let s2 = `tony 
+        ENTER
+        stark`
+
+        // TO INCLUDE SPECIAL CHARACTERS
+        // using backslash \ to escape the syntactical rule of JS
+        let s3 = "this is a \"highted \" word"
+        let s4 = "this is a 'highlighted' word"
+        let s5 = 'this is a "highlighted" word'
+        let s6 = 'this is a \n"highlighted" word'
+        let s7 = 'this is a \t"highlighted" word'
+
+        console.log("s1 : ", s1, "s2 : ", s2)
+        console.log(s3)
+        console.log(s4)
+        console.log(s5)
+        console.log(s6)
+        console.log(s7)
+    </script>
+
+    <script>
+        // string type and conversion
+        let val = 123
+        console.log("The value is ", typeof val);
+        console.log("The value is ", val);
+        console.log("The value is " + val);
+        
+        // conversion
+        val = String(val)
+        // or convert by concatenation
+        val = val + ""
+        // or use template literal to convert to string
+        val = `${val}`
+
+        console.log("The value is ", typeof val);
+
+        // undefined
+        console.log("Type of undefined : ", typeof undefined);
+        let val2 = String(undefined)
+        val2 = undefined + "some_value"
+        console.log("TYpe of undefined : ", typeof val2, val2);
+
+        // null
+        let val3 = String(null)
+        console.log("Null is ", typeof val3);
+        
+        // boolean
+        let val4 = String(Boolean)
+        console.log("Boolean is ", typeof val3);
+
+    </script>
+
+    <script>
+        // separation of strings
+        s1 = "hello world"
+
+        console.log("1. char at index 6 : ", s1.charAt(6));
+        console.log("2. char at index 6 : ", s1[6]);
+
+        // getting substring
+        s2 = s1.slice(1, 5)
+        console.log("slice string is ", s2);
+
+        // convertion of string to array
+        s3 = "Today is the 4th day of the week"
+        // s3 = s3.split(" ")
+        s3 = s3.split("t")
+        console.log("Split string is ", s3)
+
+        // convertion of array to string
+        // s4 = s3.join("")
+        s4 = s3.join("x")
+        console.log("Joined string is : ", s4);
+    </script>
+
+    <script>
+        // additional methods in string 
+        s1 = "happy place"
+
+        console.log("sub string exits ? ", s1.includes("plac"));
+        console.log("sub string exits ? ", s1.includes("plac2"));
+
+        s1 += " place"
+        console.log("index of sub string is : ", s1.indexOf("place")); 
+    </script>
+</body>
+</html>

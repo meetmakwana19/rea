@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects</title>
+</head>
+<body>
+    <h1>JS Objects</h1>
+
+    <script>
+        let obj = {
+            id : 1,
+            field: "name",
+            key: "enmfww2r18",
+        }
+        console.log(obj);
+        console.log("access objects : ", obj.key);
+
+        // adding new property to the object
+        obj.key2 = "newKey"
+        // console.log("Accessed new property : ", obj.key2);
+        console.log("Accessed new property : ", obj["key2"]);
+        
+        obj["key3"] = "3rd_key"
+        console.log("Accessed new property : ", obj["key3"]);
+
+        // this method of obj["key3"] is helpful in dynamic creations 
+        for (let index = 0; index < 5; index++) {
+            obj[index] = "Key_" + index
+        }
+        console.log(obj);
+
+        let indx = 3
+        console.log("INdex 3 value : ", obj[indx]);
+
+        const keys = Object.keys(obj);
+        console.log("Keys are ", keys);
+
+        keys.forEach(function(value){
+            console.log(obj[value]);
+        })
+
+        const values = Object.values(obj);
+        console.log("values are :", values);
+        
+    </script>
+</body>
+</html>
