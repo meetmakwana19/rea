@@ -120,7 +120,7 @@ body{
 .number11{ --rotation: 330deg }
 
 .dial-circle{
-    transform: rotate(5deg);
+    transform: rotate(6deg);
     translate: 5% 0;
     scale: 1.65;
 }
