@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analog Clock</title>
+    <!-- Bootstrap css -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <!-- local CSS -->
     <link rel="stylesheet" href="index.css" />
+    <!-- digital font -->
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
   </head>
   <body>
     <section class="container d-flex my-5 flex-column text-white">
@@ -22,6 +27,7 @@
       <div class="circle">
         <div class="clock-face text-white">
           <div>
+            <div class="info title">Meet Times</div>
             <div class="info date"></div>
             <div class="info day"></div>
             <div class="info digital"></div>
@@ -72,13 +78,27 @@
         // *********Date and day part
 
         var weekday = [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
+            "Sun",
+            "Mon",
+            "Tues",
+            "Wed",
+            "Thurs",
+            "Fri",
+            "Sat",
+        ]
+        var months = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
           ],
           date = now.getDate(),
           // +1 coz months are indexed from 0
@@ -88,6 +108,7 @@
           dayEl = document.querySelector(".day");
 
         var day = weekday[now.getDay()];
+        // var month = months[now.getMonth()]
 
         // to display numbers in 2 digit form of [hundreds units]
         // thats why appending 0 to the single digit months
@@ -96,7 +117,8 @@
           month = "0" + month;
         }
 
-        dateEl.innerHTML = date + "/" + month + "/" + year;
+        // Print date and day
+        dateEl.innerHTML = date + "|" + month + "|" + year;
         dayEl.innerHTML = day;
 
         // ***********digital time
@@ -149,7 +171,7 @@
     // Subtracting the timezone offset from the timestamp gives the number of seconds since the Unix epoch adjusted for the local timezone.
     // Math.floor() rounds this value down to the nearest integer.
     // % (60 * 60 * 24) calculates the remainder after dividing the rounded timestamp by the number of seconds in a day (60 seconds per minute, 60 minutes per hour, 24 hours per day). This ensures that the value of "--time" is always between 0 and 86,399 (the number of seconds in a day).
-    
+
     // Overall, this code generates a custom CSS property that represents the number of seconds that have elapsed since midnight in the local timezone. This value can be used to create dynamic visual effects in a web page that change over time, such as an animated background that transitions between colors based on the time of day.
     </script>
   </body>
