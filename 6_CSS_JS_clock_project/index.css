@@ -115,6 +115,7 @@ body{
     height: 100%;
     transform: rotate(var(--rotation));
     color: black;
+    padding-top: 0.5rem;
 }
 .number1{ --rotation: 30deg }
 .number2{ --rotation: 60deg }
@@ -177,7 +178,7 @@ body{
 }
 .date {
       top: 14.8rem;
-      left: 70%;
+      left: 68%;
       border: 1px solid black;
       padding: 0;
       line-height: 1.6rem;
