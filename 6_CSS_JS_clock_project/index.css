@@ -72,7 +72,7 @@ body{
     transform: rotate(90deg);
     transform-origin: 100%;
     /* transform-origin: right; */
-    transition: all 0.01s;
+    /* transition: all 0.01s; */
     z-index: 10;
 }
 .hour-hand{
@@ -80,6 +80,8 @@ body{
     translate: 32% -32% !important;
     /* transform: rotate(90deg); */
     z-index: 10;
+    animation: smooth_effect 43200s linear infinite;
+    animation-delay: calc(var(--time) * -1s);
 }
 #min-hand{
     height: 0.5rem;
@@ -87,6 +89,8 @@ body{
     translate: 14% 0;
     /* background-color: green; */
     z-index: 15;
+    animation: smooth_effect 3600s linear infinite;
+    animation-delay: calc(var(--time) * -1s);
 }
 #sec-hand{
     height: 0.28rem;
@@ -96,11 +100,12 @@ body{
     z-index: 30;
     translate: 9% 0;
     transform-origin: 80%;
-    animation: rotate 30s linear infinite;
+    animation: smooth_effect 60s linear infinite;
+    animation-delay: calc(var(--time) * -1s);
 }
-@keyframes rotate {
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
+@keyframes smooth_effect {
+    0%{transform: rotate(90deg);}
+    100%{transform: rotate(450deg);}
 }
 .number{
     --rotation: 0;
@@ -170,5 +175,9 @@ body{
       top: 8rem;
     }
 .day {
-      top: 21rem;
+      top: 15rem;
+      left: 30%;
   }
+.digital{
+    top: 21rem;
+}
