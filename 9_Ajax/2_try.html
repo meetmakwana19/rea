@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>AJAX Calls</title>
+
+        <style>
+            h1 {
+                margin: 1rem auto;
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>AJAX and XMLHttpRequest</h1>
+        <hr/>
+
+        <div id="products"></div>
+
+        <script>
+            // XMLHttpRequest() is a constructor directly and not a class in JS
+            // The constructor initializes an XMLHttpRequest. It must be called before any other method calls.
+            const httpRequest = new XMLHttpRequest()
+
+            // fucntion() is a handler and not callback
+            // fucntion() is a handler and not callback
+            httpRequest.onreadystatechange = function(){
+                if(httpRequest.readyState === XMLHttpRequest.DONE){
+                    if(httpRequest.status === 200){
+                        // console.log("Resonse : ", httpRequest.responseText);
+                        // console.log("Resonse : ", typeof httpRequest.responseText);
+                        console.log("Resonse : ", JSON.parse(httpRequest.responseText));
+
+                        const productsArray = JSON.parse(httpRequest.responseText)
+                        // parsing the responseText which is in string means string to JSON
+                        productsArray.map(function (prod){
+                            productsDiv.appendChild(createProductELement(prod))
+                        })
+
+                    }
+                    else{
+                        alert("Some error occured.")
+                    }
+                }
+            }
+
+            httpRequest.open("GET", "https://fakestoreapi.com/products")
+            
+            httpRequest.send()
+
+            const productsDiv = document.querySelector("#products")
+            function createProductELement(prod){
+                const prodDiv = document.createElement("div")
+
+                prodDiv.innerHTML = `
+                <h1>${prod.title}</h1>
+                <img src="${prod.image}" height="100px" />
+                <p>${prod.description}</p>
+                <h3>Rs. ${prod.price}</h3>
+                `
+                return prodDiv
+            }
+        </script>
+    </body>
+</html>

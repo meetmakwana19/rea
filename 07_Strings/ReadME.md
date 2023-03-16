@@ -10,6 +10,8 @@
 5. convertion of string to array using `split()`
 6. convertion of array to string using `join()`
 7. Higher order functions
+   1. Takes a function as param and returns value or vice versa 
+   2. Writing very amount of code which can be easy, readable, maintainable.
 
 ## JS Objects 
 
