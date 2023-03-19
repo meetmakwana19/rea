@@ -15,6 +15,22 @@
 - JS has speciality is providing output to the input but not heavy computations like ML algos
 
 ---
+## About Javascript :
+
+1. JS is a 
+   1. single threaded
+   2. non blocking
+   3. asynchronous
+   4. concurrent language
+2. Components 
+   1. Task queue
+   2. Call stack
+   3. Event loop
+   4. Callback queue 
+   5. Other APIs
+3. V8 engine(in chromium browsers) is the JS runtime which has 
+   1. Call stack (holds the execution context) 
+   2. A heap (used for memory allocatioon)
 
 ## How does JS works ?
 or
@@ -33,7 +49,9 @@ or
 4. Async work is sent to the WebAPIs 
 5. All JS code is dumped in `Call Stack`
 ```
-Requests -> Event loop -> Msg queue (for call stack) -> Callback queue -> Callback response 
+1. Requests --> 2. Task queue --> 3.Event loop 
+--> 4. Msg queue (for call stack) --> 5.Callback queue 
+--> 6.Callback response 
 ```
 6. Event loop handles everything of JS but for async behavious it hands out some tasks to the WebAPIs.
 7. Not all callbacks are associated with event loop like callbacks of setTImeout() sends response to the event loop but higher order funtions are more like handlers which doesnt deal with event loop 
