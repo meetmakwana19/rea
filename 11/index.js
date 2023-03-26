@@ -1,4 +1,5 @@
-const http = require("http")
+const http = require("http"); //built-in module
+const { type } = require("os");
 
 let users = [
     {
@@ -15,6 +16,7 @@ let users = [
     }
 ]
 
+// The createServer function takes a callback as an argument. This callback takes Request and Response objects as arguments for further processing
 const server = http.createServer(function(request, response){
     // response.write("Hello from server")
 
@@ -30,10 +32,12 @@ const server = http.createServer(function(request, response){
     console.log("Paths---", paths);
     console.log("Methods---", request.method);
 
+    // -------------------------------------
     // getting list of all users at http://localhost:3000/users
     if(request.method === "GET" && paths[1] === "users" && paths.length === 2){
         response.write(JSON.stringify(users))
     }
+    // ----------------------------------------
     // getting a specific indexed user at http://localhost:3000/users/idx
     else if(request.method === "GET" && paths[1] === "users" && paths[2]){
         const idx = paths[2]
@@ -46,6 +50,8 @@ const server = http.createServer(function(request, response){
             response.write("User not found")
         }
     }
+    // -------------------------------------
+    // Posting a user at http://localhost:3000/users
     else if(request.method === "POST" && paths[1] === "users"){
 
         let data = ""
@@ -70,6 +76,35 @@ const server = http.createServer(function(request, response){
         response.statusCode = 201 
         response.write("User resource created")
     }
+    // -----------------------------------
+    // Update a user using PUT
+    else if(request.method === "PUT" && paths[1] === "users"){
+        const idx = paths[2]
+        const user = users[idx]
+        if(user){
+            let data = ""
+            let global_obj = ""
+            request.on("data", function(chunk){
+                data += chunk
+            })
+            request.on("end", function(){
+                const obj = JSON.parse(data.toString())
+
+                // **updating that index user with the received obj
+                users[idx] = obj;
+
+                console.log("After update:",users);
+
+                // global_obj = obj;
+                // console.log("global is ", JSON.stringify(global_obj));
+            })
+            response.write(JSON.stringify(users[idx]) + " is updated");    
+            // response.write(JSON.stringify(users[idx]) + "updated to -----> " + JSON.stringify(global_obj));    
+        }
+        else{
+            response.write("User not found for update")
+        }
+    }
     // for random text in url
     else{
         response.write("Not found")
@@ -82,6 +117,7 @@ const server = http.createServer(function(request, response){
     // use slice to delete
 })
 
+// The "server.listen" takes a port number to run on and a callback function to handle it.
 server.listen(3000, function(){
     console.log("Server listening on port 3000");
 })

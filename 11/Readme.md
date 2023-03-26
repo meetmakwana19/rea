@@ -59,3 +59,9 @@ npm install mocha --save-dev
 1. request url
 2. request header
 3. request body
+
+## Building a CRUD API without any external library in NodeJS
+
+1. The `createServer` function takes a callback as an argument. This callback takes `Request` and `Response` objects as arguments for further processing.
+2. The `response.write` will reply the client with text provided when a request is recieved.
+3. The `server.listen` takes a port number to run on and a callback function to handle it.
