@@ -79,8 +79,22 @@ const server = http.createServer(function(request, response){
     // -----------------------------------
     // Update a user using PUT
     else if(request.method === "PUT" && paths[1] === "users" && paths[2]){
-        const idx = paths[2]
+
+        let idx = paths[2]
+
+        // check if the param is a number type to check via index
+        if(isNaN(idx)){
+            // this will return true when string will be there in param as it is not Not a Number
+            const id = users.findIndex(function(element){
+                return element.name === paths[2]
+            })
+            // updating global idx with the found one
+            idx = id;
+        }
+
         const user = users[idx]
+        // console.log("user from name is ", user);
+
         if(user){
             let data = ""
             let global_obj = ""
@@ -109,6 +123,7 @@ const server = http.createServer(function(request, response){
             response.write("Error ! User not found for update")
         }
     }
+        
     // -----------------------------------
     // DELETE user using idx
     else if(request.method === "DELETE" && paths[1] === "users" && paths[2]){
