@@ -116,7 +116,51 @@ const server = http.createServer(function(request, response){
             // response.write(JSON.stringify(users[idx]) + "updated to -----> " + JSON.stringify(global_obj)); 
             
             // resource updated successfully
-            response.statusCode = 204
+            response.statusCode = 200
+            response.write("\nUser updated successfully")
+        }
+        else{
+            response.write("Error ! User not found for update")
+        }
+    }
+    // -----------------------------------
+    // PATCH : Update portion of the user 
+    else if(request.method === "PATCH" && paths[1] === "users" && paths[2]){
+        let idx = paths[2]
+
+        // check if the param is a number type to check via index
+        if(isNaN(idx)){
+            // this will return true when string will be there in param as it is not Not a Number
+            const id = users.findIndex(function(element){
+                return element.name === paths[2]
+            })
+            // updating global idx with the found one
+            idx = id;
+        }
+        const user = users[idx]
+
+        if(user){
+            let data = ""
+            // let global_obj = ""
+            request.on("data", function(chunk){
+                data += chunk
+            })
+            request.on("end", function(){
+                const obj = JSON.parse(data.toString())
+                console.log("obj is ", obj);
+
+                // updating only the required portion
+                if(obj.name){
+                    users[idx].name = obj.name
+                }
+                else if(obj.age){
+                    users[idx].age = obj.age
+                }
+            })
+            response.write(JSON.stringify(users[idx]) + " is updated");    
+            
+            // resource updated successfully
+            response.statusCode = 200
             response.write("\nUser updated successfully")
         }
         else{
