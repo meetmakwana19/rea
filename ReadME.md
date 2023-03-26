@@ -20,3 +20,11 @@
       2. Executable file 
 
 [Ref](https://rahul-saini.medium.com/machine-code-vs-byte-code-vs-object-code-vs-source-code-vs-assembly-code-812c9780f24c#:~:text=The%20source%20code%20is%20assembled,step%20may%20not%20be%20needed.)
+
+---
+Tasks : 
+
+- [x] Portfolio using bootstrap
+- [x] JS clock 
+- [] Fake API store website
+- [] CRUD API in NodeJS
