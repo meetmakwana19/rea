@@ -47,7 +47,7 @@ const server = http.createServer(function(request, response){
             response.write(JSON.stringify(user))
         }
         else{
-            response.write("User not found")
+            response.write("Error ! User not found")
         }
     }
     // -------------------------------------
@@ -78,7 +78,7 @@ const server = http.createServer(function(request, response){
     }
     // -----------------------------------
     // Update a user using PUT
-    else if(request.method === "PUT" && paths[1] === "users"){
+    else if(request.method === "PUT" && paths[1] === "users" && paths[2]){
         const idx = paths[2]
         const user = users[idx]
         if(user){
@@ -99,10 +99,31 @@ const server = http.createServer(function(request, response){
                 // console.log("global is ", JSON.stringify(global_obj));
             })
             response.write(JSON.stringify(users[idx]) + " is updated");    
-            // response.write(JSON.stringify(users[idx]) + "updated to -----> " + JSON.stringify(global_obj));    
+            // response.write(JSON.stringify(users[idx]) + "updated to -----> " + JSON.stringify(global_obj)); 
+            
+            // resource updated successfully
+            response.statusCode = 204
+            response.write("\nUser updated successfully")
         }
         else{
-            response.write("User not found for update")
+            response.write("Error ! User not found for update")
+        }
+    }
+    // -----------------------------------
+    // DELETE user using idx
+    else if(request.method === "DELETE" && paths[1] === "users" && paths[2]){
+        const idx = paths[2]
+        const user = users[idx]
+
+        if(user){
+            // deleting the indexed user with splice
+            users.splice(idx, 1)
+
+            response.write(JSON.stringify(user) + " User deleted successfully")
+
+        }
+        else{
+            response.write("Error ! User doesnt exist to delete")
         }
     }
     // for random text in url
