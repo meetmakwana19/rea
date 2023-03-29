@@ -65,3 +65,25 @@ npm install mocha --save-dev
 1. The `createServer` function takes a callback as an argument. This callback takes `Request` and `Response` objects as arguments for further processing.
 2. The `response.write` will reply the client with text provided when a request is recieved.
 3. The `server.listen` takes a port number to run on and a callback function to handle it.
+
+---
+
+- Spread operator makes a new object.
+- For eg `{...obj}` will be a new obj1 and not the og `obj`
+- It works like call by value and not reference
+```
+const obj = { 
+    name : "tony",
+    alter_ego : "iron man", age: 50,
+}
+
+const obj1 = { 
+    name : "tony stark"
+}
+
+const newObj = {...obj, ...obj1}
+
+>> {name: 'tony stark', alter_ego: 'iron man', age: 50}
+```
+- So the key with same names will be replaced by the recent one. 
+  - Here both objects getting destructured has same key `names`. So the latest key `name` in the obj1 with value "tony stark" will replace the old one with name "tony"

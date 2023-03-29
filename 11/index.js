@@ -57,6 +57,7 @@ const server = http.createServer(function(request, response){
         let data = ""
         // .on is event listener which will listen when 'data' packets are arrived
         // chunk is part of datapackets sent over the network
+        // collecting the data receieved on request
         request.on("data", function(chunk){
             data += chunk 
         })
@@ -105,7 +106,14 @@ const server = http.createServer(function(request, response){
                 const obj = JSON.parse(data.toString())
 
                 // **updating that index user with the received obj
-                users[idx] = obj;
+                // users[idx] = obj;
+
+                // -----------if need to add new properties in the obj for the update part
+                // using SPREAD OPERATORE
+                users[idx] = {
+                    ...users[idx], 
+                    ...obj
+                }
 
                 console.log("After update:",users);
 
@@ -171,15 +179,22 @@ const server = http.createServer(function(request, response){
     // -----------------------------------
     // DELETE user using idx
     else if(request.method === "DELETE" && paths[1] === "users" && paths[2]){
-        const idx = paths[2]
-        const user = users[idx]
+        let idx = paths[2]
+        
+        // --------delete by name instead of idx
+        if(isNaN(idx)){
+            const name = paths[2]
+            
+            idx = users.findIndex(element => element.name.toLowerCase() === name.toLowerCase())
+            console.log("idx is -", idx);
+        }
 
+        const user = users[idx]
         if(user){
             // deleting the indexed user with splice
             users.splice(idx, 1)
 
             response.write(JSON.stringify(user) + " User deleted successfully")
-
         }
         else{
             response.write("Error ! User doesnt exist to delete")
