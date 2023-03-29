@@ -1,0 +1,18 @@
+{
+  "name": "first_express_app",
+  "version": "1.0.0",
+  "description": "Making an express app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "nodejs"
+  ],
+  "author": "Meet Makwana",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
