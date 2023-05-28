@@ -26,5 +26,5 @@ Tasks :
 
 - [x] Portfolio using bootstrap
 - [x] JS clock 
-- [] Fake API store website
-- [] CRUD API in NodeJS
+- [x] Fake API store website
+- [x] CRUD API in Vanilla NodeJS
