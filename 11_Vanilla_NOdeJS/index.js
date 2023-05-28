@@ -34,13 +34,18 @@ const server = http.createServer(function(request, response){
 
     // -------------------------------------
     // getting list of all users at http://localhost:3000/users
+    // paths.length = 2 because bydefault there will be one empty element in the array due to split operation.
     if(request.method === "GET" && paths[1] === "users" && paths.length === 2){
         response.write(JSON.stringify(users))
     }
+
     // ----------------------------------------
     // getting a specific indexed user at http://localhost:3000/users/idx
     else if(request.method === "GET" && paths[1] === "users" && paths[2]){
+
+        // getting the index from the url path array
         const idx = paths[2]
+        // finding the user
         const user = users[idx]
 
         if(user){
@@ -55,6 +60,7 @@ const server = http.createServer(function(request, response){
     else if(request.method === "POST" && paths[1] === "users"){
 
         let data = ""
+
         // .on is event listener which will listen when 'data' packets are arrived
         // chunk is part of datapackets sent over the network
         // collecting the data receieved on request
@@ -63,13 +69,16 @@ const server = http.createServer(function(request, response){
         })
 
         request.on("end", function(){
+
+            // need to parse the data into JSON coz the data sent through the request would be in the form like "name":"Thor" but JSON objects dont have such quotes on key so it needs to be like name:"Thor"
             const obj = JSON.parse(data.toString())
+
             console.log("JSON parsed data : ",obj);
             console.log(typeof(obj));
             console.log("String data response :", data);
             console.log(typeof(data));
 
-            // creating new user
+            // creating new user by appending the object at the end of the users array mentioned above in the file ^
             users.push(obj)
         })
 
@@ -77,6 +86,7 @@ const server = http.createServer(function(request, response){
         response.statusCode = 201 
         response.write("User resource created")
     }
+
     // -----------------------------------
     // Update a user using PUT
     else if(request.method === "PUT" && paths[1] === "users" && paths[2]){
@@ -93,12 +103,13 @@ const server = http.createServer(function(request, response){
             idx = id;
         }
 
+        // finding that user 
         const user = users[idx]
         // console.log("user from name is ", user);
 
         if(user){
             let data = ""
-            let global_obj = ""
+            // let global_obj = ""
             request.on("data", function(chunk){
                 data += chunk
             })
@@ -108,7 +119,10 @@ const server = http.createServer(function(request, response){
                 // **updating that index user with the received obj
                 // users[idx] = obj;
 
+                // UPDATE : 
+
                 // -----------if need to add new properties in the obj for the update part
+
                 // using SPREAD OPERATORE
                 users[idx] = {
                     ...users[idx], 
@@ -131,6 +145,7 @@ const server = http.createServer(function(request, response){
             response.write("Error ! User not found for update")
         }
     }
+
     // -----------------------------------
     // PATCH : Update portion of the user 
     else if(request.method === "PATCH" && paths[1] === "users" && paths[2]){
@@ -158,11 +173,16 @@ const server = http.createServer(function(request, response){
                 console.log("obj is ", obj);
 
                 // updating only the required portion
+                // only name & age can be updated for now
                 if(obj.name){
                     users[idx].name = obj.name
                 }
                 else if(obj.age){
                     users[idx].age = obj.age
+                }
+                else{
+                    // this is not working dk y.
+                    response.write("Sorry. Can only patch name or age for now.")
                 }
             })
             response.write(JSON.stringify(users[idx]) + " is updated");    
@@ -202,14 +222,13 @@ const server = http.createServer(function(request, response){
     }
     // for random text in url
     else{
-        response.write("Not found")
+        response.write("Vanilla NodeJS Server: URL not found")
     }
 
 
     // need to end the server otherwise it'll keep loading due to nothing/many thing is getting sent in the response
     response.end()
 
-    // use slice to delete
 })
 
 // The "server.listen" takes a port number to run on and a callback function to handle it.

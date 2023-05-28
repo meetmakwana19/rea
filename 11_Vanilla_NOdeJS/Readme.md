@@ -2,6 +2,10 @@
 
 ##### Conversion of strings to array 
 
+- Use `.split()`
+
+##### Conversion of array to a string 
+
 - Use `join()`
 
 ##### To access some property of the object inside an array 
@@ -21,11 +25,12 @@
 - And then `reduce()` on it or directly reduce
   - reducer accepts an function with accumulator and current value.
   - Need to give an initialization value
+- Or just chain the reduce() with the map()
 
 ## NPM NODE
 
 1. Creating package.json by `nom init`
-2. Installing packages 
+2. Installing packages (mocha for testing)
 ```
 npm install express
 
@@ -74,7 +79,8 @@ npm install mocha --save-dev
 ```
 const obj = { 
     name : "tony",
-    alter_ego : "iron man", age: 50,
+    alter_ego : "iron man", 
+    age: 50,
 }
 
 const obj1 = { 
