@@ -24,7 +24,8 @@
 ---
 Tasks : 
 
-- [x] Portfolio using bootstrap
-- [x] JS clock 
-- [x] Fake API store website
-- [x] CRUD API in Vanilla NodeJS
+- [x] 1. Portfolio using bootstrap - https://github.com/meetmakwana19/bs-portfolio & https://meetmakwana.onrender.com/
+- [x] 2. JS clock - https://github.com/meetmakwana19/js-analog-clock & https://meetmakwana19.github.io/js-analog-clock/ 
+- [x] 3. Fake API store website - https://github.com/meetmakwana19/fakeapi-website & https://mytra.onrender.com/
+- [x] 4. CRUD API in Vanilla NodeJS - https://github.com/meetmakwana19/rea/tree/main/11_Vanilla_NOdeJS
+- [x] 5. ExpressJS ToDo app - https://github.com/meetmakwana19/express-to-do-app & https://todoist-aplv.onrender.com/
