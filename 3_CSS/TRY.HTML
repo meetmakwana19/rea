@@ -37,6 +37,29 @@
             border: 5px solid black;
             height: 60vh;
         }
+        .outer{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .inner{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 1px solid white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%uu);
+        }
+        .trying{
+            width: 150px;
+            height: 150px;
+            border: 2px solid purple;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +68,15 @@
         <div>
             <span>I am div inside div</span>
             <p>Hello world, I am p</p>
+        </div>
+
+        <div class="outer">
+            <div class="inner">
+
+            </div>
+        </div>
+        <div class="trying">
+            I am absolute and I will go above DOM 
         </div>
     </div>
     <p>I am a student</p>
