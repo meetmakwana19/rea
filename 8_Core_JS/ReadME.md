@@ -1,3 +1,32 @@
+# Javascript 
+
+- JS runs on V8 engine. Each browser has their diff engines. Chromium engines has V8 engine
+- JS is a scripting language executing line b line and not really compiling
+- JS cannot access/read files on the system as it runs on the browser. Browser has to deal with all these for JS
+- Each and everything in JS is by default treated as 'Object'
+- JS has speciality is providing output to the input but not heavy computations like ML algos
+
+## Javascript engine components 
+
+```
+1. JS source code ---> 
+2. Parser ~~~~~~> (AST generated) ----->
+3. Interpreter -----> Byte code --> CPU
+4. JIT Optimizing Compiler ~~~> Optimized Byte code  --> CPU
+```
+
+1. **Parser** (with Tokeniser/lexical analyzer) : Parsing identifies which parts of the code are keywords, which parts are variable names, which parts are function names, which parts are operands, and so on
+   1. **AST** (Abstract syntax tree) : Hierarchical tree 
+2. **Interpreter** + (optional + **Profiler**) : generate bytecode (`Add a, [6]`), which is a somewhat human-readable set of instructions that is closer to machine code(`int31add1 rbx, 0x1` or `1010111001001`)
+3. **JIT Optimizing Compiler** : CPU specific compiler is used the browser's enginer as we download different browsers based on our system.... The optimized code runs faster 
+   1. in JS, if some code/function starts getting warm then JS compiles it and stores it with a version and the next time the saem code is encountered, the translation(parsing+interpreting) is skipped. If some code starts getting very hot and hotter then JIT compiler optimises it more as its getting used multiple times.
+4. **Garbage collector**
+5.  **Profiler** : Checks for repeating code and optimizes by pushing them to the compiler
+
+------------Code runs !------------------
+
+---
+
 ## NodeJS engine :
 
 1. NodeJS Core Lib (Javascript)
@@ -8,13 +37,6 @@
 
 ---
 
-- JS runs on V8 engine. Each browser has their diff engines. Chromium engines has V8 engine
-- JS is a scripting language executing line b line and not really compiling
-- JS cannot access/read files on the system as it runs on the browser. Browser has to deal with all these for JS
-- Each and everything in JS is by default treated as 'Object'
-- JS has speciality is providing output to the input but not heavy computations like ML algos
-
----
 ## About Javascript :
 
 1. JS is a 
@@ -22,7 +44,7 @@
    2. non blocking
    3. asynchronous
    4. concurrent language
-2. Components 
+2. Event loop Components 
    1. **Call stack** - 
       1. Things to execute next
       2. FILO basis
@@ -59,9 +81,9 @@ or
 4. Async work is sent to the WebAPIs 
 5. All JS code is dumped in `Call Stack`
 ```
-1. Requests --> 2. Task queue --> 3.Event loop 
---> 4. Msg queue (for call stack) --> 5.Callback queue 
---> 6.Callback response 
+1. Requests --> 2. Call stack --> 3.(If async operation then) Web APIS/libuv 
+--> 4. (if NodeJS then) worker threads --> 5. Callback/task/event queue 
+--> 6.Callback response from event loop back to the call stack. 
 ```
 6. Event loop handles everything of JS but for async behavious it hands out some tasks to the WebAPIs.
 7. Not all callbacks are associated with event loop like callbacks of setTImeout() sends response to the event loop but higher order funtions are more like handlers which doesnt deal with event loop 
@@ -82,10 +104,9 @@ setTimeout(function(){
 
 ---
 
-- Javascript runtime(call stack, event loop, callback queue) and as a language can do only one thing at a time which is 
+- Javascript runtime : Browser's runtime evn or NodeJS runtime env.
 - Javascipt's Web APIs include setTimeout, fetch, etc. 
 - Browser provides us DOM to work with HTML 
-- In NodeJS, the functionalities of not avaible in javascript runtime are provided as C++ APIs.
 
 ---
 
