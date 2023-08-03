@@ -5,7 +5,7 @@ console.log('begins');
 // setTimeout will go to macroTask
 setTimeout(() => {
   console.log('setTimeout 1');
-  // Promise.resolve() will go to microTask
+  // Promise.resolve() has then so .then will go to microTask
   Promise.resolve().then(() => {
     console.log('promise 1');
   });
@@ -23,4 +23,7 @@ new Promise(function (resolve, reject) {
   setTimeout(() => {
     console.log(res);
   }, 0);
+  console.log("hello");
 });
+
+console.log("ends");

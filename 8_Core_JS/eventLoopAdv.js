@@ -20,7 +20,7 @@ async1();
 new Promise(function (resolve) {
     console.log('promise1');
     resolve();
-}).then(function () {
+}).then(function () {  // then goes in microtask queue
     console.log('promise2');
 });
 
